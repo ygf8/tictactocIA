@@ -1,6 +1,5 @@
 from easyAI import TwoPlayerGame, Human_Player, AI_Player, Negamax
 from flask import Flask, render_template_string, request, make_response
-import webbrowser
 
 class TicTacToe(TwoPlayerGame):
     """The board positions are numbered as follows:
@@ -132,7 +131,5 @@ def play_game():
     c = ",".join(map(str, ttt.board))
     resp.set_cookie("game_board", c)
     return resp
-
-webbrowser.open("http://localhost:5000/")
 if __name__ == "__main__":
     app.run()
